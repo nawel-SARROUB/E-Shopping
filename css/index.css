@@ -1,49 +1,6 @@
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: fit-content;
-}
-
-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-content: center;
-}
-
-header {
-  background-color: #4d4d4d;
-  color: #ffffff;
-  padding: 15px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  place-content: space-between;
-  width: auto;
-}
-
-nav a {
-  color: rgb(46, 12, 12);
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 30PX;
-  margin-bottom: 50PX;
-}
-
 .box {
-  width: auto;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: #f0f0f0;
   margin: 40px;
   padding: 15px;
@@ -51,9 +8,8 @@ main {
 }
 
 .img {
-  background-color: rgb(67, 109, 138);
   height: 300px;
-  width: 250px;
+  width: 280px;
 }
 
 .box:hover {
@@ -67,55 +23,8 @@ main {
   font-weight: 700;
 }
 
-footer {
-  background-color: #4d4d4d;
-  width: auto;
-  height: 70PX;
-}
-
 .material-symbols-outlined {
   cursor: pointer;
-}
-
-.list-categorie {
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-h1 {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
-
-.genre {
-  margin: 12PX;
-}
-
-.display-affiche {
-  display: flex;
-  justify-content: space-between;
-}
-
-.filters {
-  display: flex;
-  height: fit-content;
-  align-self: center;
-  align-items: center;
-  padding: 12PX;
-  border-radius: 0.75rem;
-  background-color: unset;
-  border-color: rgb(0, 0, 0);
-  border-width: 2pX;
-  font-size: medium;
-  font-weight: 600;
-  justify-content: space-around;
-  cursor: pointer;
-}
-
-.material-symbols-outlined {
-  margin-left: 10PX;
 }
 
 .details {
@@ -266,9 +175,86 @@ h1 {
 
 .btn-valider {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   align-self: center;
   margin-top: 30PX;
 }
 
-/*# sourceMappingURL=style.css.map */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+header {
+  background-color: #4d4d4d;
+  color: #ffffff;
+  padding: 15px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  place-content: space-around;
+  width: auto;
+}
+
+nav a {
+  color: rgb(129, 0, 0);
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+h1 {
+  display: flex;
+  width: 50%;
+}
+
+.genre {
+  margin: 12PX;
+}
+
+footer {
+  background-color: #4d4d4d;
+  width: auto;
+  height: 70PX;
+}
+
+.display-affiche {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters {
+  display: flex;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
+  align-items: center;
+  padding: 12PX;
+  border-radius: 0.75rem;
+  background-color: unset;
+  border-color: rgb(0, 0, 0);
+  border-width: 2pX;
+  font-size: medium;
+  font-weight: 600;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  margin-left: 10PX;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: -moz-fit-content;
+  height: fit-content;
+}/*# sourceMappingURL=index.css.map */
