@@ -1,0 +1,25 @@
+@import'./index.scss';
+
+.display-affiche{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters{
+    display: flex;
+    height: fit-content;
+    align-self: center;
+    align-items: center;
+    padding: 12PX;
+    border-radius: 0.75rem;
+    background-color: unset;
+    border-color: rgb(0, 0, 0);
+    border-width: 2pX;
+    font-size:medium;
+    font-weight: 600;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.material-symbols-outlined{
+    margin-left: 10PX;
+}

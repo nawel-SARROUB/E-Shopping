@@ -1,0 +1,36 @@
+@import'./index.scss';
+
+header {
+    background-color: #4d4d4d;
+    color: #ffffff;
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    place-content: space-between;
+    width: auto;
+}
+
+nav a {
+    color: rgb(46, 12, 12);
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.list-categorie {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.genre{
+    margin: 12PX;
+}

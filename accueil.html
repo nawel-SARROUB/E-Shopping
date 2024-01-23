@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/js/modal-flt.js" async></script>
+    <script src="/js/index.js" async></script>
+    <script src="/js/modal-cart.js" async></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <title>Boutique en ligne</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="list-categorie">
+                <p class="genre" id="">HOMME</p>
+                <p class="genre" id="">FEMME</p>
+            </div>
+            <h1>Site E-Commerce</h1>
+            <i class="material-symbols-outlined">shopping_bag</i>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="title-products">
+            <div class="display-affiche">
+                <p>LISTE DES PRODUITS</p>
+                <button class="filters">Filtres
+                    <span class="material-symbols-outlined">tune</span>
+                </button>
+            </div>
+            <hr>
+        </div>
+
+        <section>
+            
+            <div class="box" data-product="1">
+            </div>
+
+            <!-- la box par reference qui contiendra la données et saffichera en quantité egale aux données -->
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+
+    <!-- la modal pour le filtre -->
+    <div class="modal" id="filterModal">
+        <div class="content-modal">
+            <span class="material-symbols-outlined closeModal" onclick="closeModal()">
+                close
+            </span>
+
+            <div class="tri">
+                <p class="part">Trier</p>
+                <label class="croissant">
+                    <input type="checkbox" name="prixCroissant"> Prix croissant
+                </label>
+                <label class="decroissant">
+                    <input type="checkbox" name="prixDecroissant"> Prix décroissant
+                </label>
+            </div>
+             
+            <div class="categ">
+                <p class="part">Catégorie</p>
+                <div class="chk">
+                        <label for="feminin" class="chk-f">
+                            <input type="checkbox" name="feminin" id="feminin"> Femme
+                        </label>
+                        <label for="masculin" class="chk-h">
+                            <input type="checkbox" name="masculin" id="masculin"> Homme
+                        </label>
+                </div>
+            </div>
+
+            <div class="colors">
+                <p class="part">Couleurs</p>
+                <ul class="list-colors">
+                    <li><span class="color-box red" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box orange" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box yellow" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box green" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box blue" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box purple" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box pink" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box beige" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box brown" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box grey" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box black" onclick="toggleColor(this)"></span></li>
+                    <li><span class="color-box white" onclick="toggleColor(this)"></span></li>
+                </ul>
+            </div>
+
+            <div class="type-produits">
+                <p class="part">Type de produits</p>
+                    <div class="checkbox-categ">
+                        <label for="pantalons">
+                            <input type="checkbox" name="pantalons" id="pantalons"> Pantalons
+                        </label>
+
+                        <label for="pulls">
+                            <input type="checkbox" name="pulls" id="pulls"> Pulls
+                        </label>
+
+                        <label for="t-shirt">
+                            <input type="checkbox" name="t-shirt" id="t-shirt"> T-shirts
+                        </label>
+
+                        <label for="chemises">
+                            <input type="checkbox" name="chemises" id="chemises"> Chemises
+                        </label>
+                
+                        <label for="vestes">
+                            <input type="checkbox" name="vestes" id="vestes"> Vestes
+                        </label>
+                
+                        <label for="chaussures">
+                            <input type="checkbox" name="chaussures" id="chaussures"> Chaussures
+                        </label>
+                    </div>
+            </div>
+
+            <button class="btn-valider" value="valider">Valider</button>
+        </div>
+    </div>
+</body>
+
+</html>

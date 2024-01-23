@@ -1,0 +1,61 @@
+[
+	{
+		"id": 1,
+		"name": "T-Shirt",
+		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
+		"price": "40.00",
+		"images": [
+			{
+				"url": "./img/T-shirt-black.png"
+			},
+			{
+				"url": "./img/T-shirt-darkblue.png"
+			}
+		]
+	},
+
+	{
+		"id": 2,
+		"name": "Oversize T-Shirt",
+		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
+		"price": "52.99",
+		"images": [
+			{
+				"url": "./img/oversize-T-shirt-blue.png"
+			}
+		]
+	},
+
+	{
+		"id": 3,
+		"name": "Sweater",
+		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
+		"price": "69.99",
+		"images": [
+			{
+				"url": "./img/sweater-white.png"
+			},
+			{
+				"url": "./img/sweater-orange.png"
+			},
+			{
+				"url": "./img/sweater-pink.png"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "Jeans",
+		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
+		"price": "60.00",
+		"images": [
+			{
+				"url": "./img/jeans-blue.png"
+				
+			},
+			{
+				"url": "./img/jeans-black.png"
+			}
+		]
+	}
+]
