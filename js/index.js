@@ -27,7 +27,7 @@ fetch(jsonFile)
                     <p class="titre-articles">${name}</p>
                 </a>
                 <p class="description-articles">${description}</p>
-                <a href="details.html" class="details">Détails</a>
+                <a href="details.html?id=${id}" class="details">Détails</a>
             `;
 
             // Append the box to the <section>
