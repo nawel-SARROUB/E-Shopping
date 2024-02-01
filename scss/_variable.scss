@@ -1,7 +1,18 @@
+$fontPrice: 'Jost', sans-serif;
+$fontBase : 'Arial', sans-serif;
+$grey : rgb(54, 54, 54);
+$headerColor : black;
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: $fontBase;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     height: fit-content;
 }
+
+:root{
+    overflow-x: hidden;
+}
+
+a{text-decoration: none;}

@@ -1,17 +1,81 @@
 section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
     justify-content: center;
-
+    margin: auto;
+    width: fit-content;
+    margin-top: 30px;
 }
 
 main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
     margin: 30PX;
     margin-bottom: 50PX;
+}
+
+.title-products p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30PX;
+    font-weight: 700;
+}
+
+.box {
+    margin: 20px;
+    width: 290px; // La largeur est maintenant fixée à la largeur de l'image
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centre les éléments horizontalement
+}
+
+.images-style {
+    width: 100%; // L'image remplit la largeur de .box
+    height: 370px;
+    object-fit: cover;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+}
+
+[class*="articles"] {
+    font-size: smaller;
+    width: 100%; // Assurez-vous que les éléments prennent toute la largeur disponible
+}
+
+.panier-articles {
+    align-self: flex-end;
+    width: 100%; // Utilisez la pleine largeur pour le conteneur
+}
+
+.price-articles {
+    font-family: $fontPrice;
+    font-weight: 900;
+    color: $grey;
+    width: 100%; // Utilisez la pleine largeur pour le conteneur
+}
+
+.ajout-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; // Utilisez la pleine largeur pour le conteneur
+    margin-top: auto; /* Ceci pousse le contenu vers le bas */
+}
+
+.icon-card {
+    align-self: center;
+}
+
+.titre-articles {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.part-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ceci aligne le contenu en haut */
+    width: 100%; /* Utilisez toute la largeur de .box */
+    flex-grow: 1; /* Ceci permet à part-infos de prendre tout l'espace disponible */
 }

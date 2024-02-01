@@ -1,7 +1,12 @@
 header {
-    background-color: #4d4d4d;
+    background-color: $headerColor;
     color: #ffffff;
-    padding: 15px;
+    padding: 35px;
+}
+
+.display-affiche{
+    display: flex;
+    justify-content: space-around;
 }
 
 nav {
@@ -12,7 +17,6 @@ nav {
 }
 
 nav a {
-    color: rgb(129, 0, 0);
     text-decoration: none;
     margin: 0 15px;
 }
@@ -20,8 +24,4 @@ nav a {
 h1{
     display: flex;
     width: 50%;
-}
-
-.genre{
-    margin: 12PX;
 }
