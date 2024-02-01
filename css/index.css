@@ -1,34 +1,66 @@
-.box {
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: #f0f0f0;
-  margin: 40px;
-  padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+@charset "UTF-8";
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: fit-content;
 }
 
-.img {
-  height: 300px;
-  width: 280px;
+:root {
+  overflow-x: hidden;
 }
 
-.box:hover {
-  transform: scale(1.01);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+a {
+  text-decoration: none;
 }
 
-.title-products p {
-  font-family: "Poppins", sans-serif;
-  font-size: 30PX;
-  font-weight: 700;
+header {
+  background-color: black;
+  color: #ffffff;
+  padding: 35px;
 }
 
-.material-symbols-outlined {
+.display-affiche {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  place-content: space-around;
+  width: auto;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+h1 {
+  display: flex;
+  width: 50%;
+}
+
+.filters {
+  display: flex;
+  height: fit-content;
+  align-self: center;
+  align-items: center;
+  padding: 12PX;
+  border-radius: 0.75rem;
+  background-color: unset;
+  border-color: rgb(0, 0, 0);
+  border-width: 2pX;
+  font-size: medium;
+  font-weight: 600;
+  justify-content: space-around;
   cursor: pointer;
 }
 
-.details {
-  float: inline-end;
+.material-symbols-outlined {
+  margin-left: 10PX;
 }
 
 .modal-open {
@@ -167,6 +199,7 @@
 .checkbox-categ {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  font-size: smaller;
 }
 
 .part {
@@ -175,86 +208,117 @@
 
 .btn-valider {
   display: flex;
-  width: -moz-fit-content;
   width: fit-content;
   align-self: center;
   margin-top: 30PX;
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: -moz-fit-content;
-  height: fit-content;
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  margin: auto;
+  width: fit-content;
+  margin-top: 30px;
 }
 
-header {
-  background-color: #4d4d4d;
-  color: #ffffff;
-  padding: 15px;
+main {
+  margin: 30PX;
+  margin-bottom: 50PX;
 }
 
-nav {
+.title-products p {
+  font-family: "Poppins", sans-serif;
+  font-size: 30PX;
+  font-weight: 700;
+}
+
+.box {
+  margin: 20px;
+  width: 290px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  place-content: space-around;
-  width: auto;
 }
 
-nav a {
-  color: rgb(129, 0, 0);
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-h1 {
-  display: flex;
-  width: 50%;
-}
-
-.genre {
-  margin: 12PX;
-}
-
-footer {
-  background-color: #4d4d4d;
-  width: auto;
-  height: 70PX;
-}
-
-.display-affiche {
-  display: flex;
-  justify-content: space-between;
-}
-
-.filters {
-  display: flex;
-  height: -moz-fit-content;
-  height: fit-content;
-  align-self: center;
-  align-items: center;
-  padding: 12PX;
-  border-radius: 0.75rem;
-  background-color: unset;
-  border-color: rgb(0, 0, 0);
-  border-width: 2pX;
-  font-size: medium;
-  font-weight: 600;
-  justify-content: space-around;
-  cursor: pointer;
+.images-style {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
 }
 
 .material-symbols-outlined {
-  margin-left: 10PX;
+  cursor: pointer;
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: -moz-fit-content;
-  height: fit-content;
-}/*# sourceMappingURL=index.css.map */
+[class*=articles] {
+  font-size: smaller;
+  width: 100%;
+}
+
+.panier-articles {
+  align-self: flex-end;
+  width: 100%;
+}
+
+.price-articles {
+  font-family: "Jost", sans-serif;
+  font-weight: 900;
+  color: rgb(54, 54, 54);
+  width: 100%;
+}
+
+.ajout-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto; /* Ceci pousse le contenu vers le bas */
+}
+
+.icon-card {
+  align-self: center;
+}
+
+.titre-articles {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.part-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ceci aligne le contenu en haut */
+  width: 100%; /* Utilisez toute la largeur de .box */
+  flex-grow: 1; /* Ceci permet à part-infos de prendre tout l'espace disponible */
+}
+
+.image-slider {
+  margin: 0 auto;
+}
+
+.image-slider .slick-slide {
+  position: absolute; /* S'assure que le slide est bien positionné */
+  overflow: hidden;
+}
+
+.image-slider .slick-slide img {
+  width: 100%; /* Assurez-vous que l'image prend la largeur totale du slide */
+  height: auto; /* La hauteur est réglée automatiquement pour conserver les proportions */
+  transition: transform 0.3s ease; /* Transition fluide pour le zoom */
+  position: relative; /* Position relative pour rester dans le flux normal du document */
+}
+
+.image-slider .slick-list {
+  margin: 0 -10px;
+}
+
+.slick-slide img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.css.map */

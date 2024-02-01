@@ -1,60 +1,86 @@
 [
 	{
 		"id": 1,
-		"name": "T-Shirt",
-		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
-		"price": "40.00",
+		"name": "Nike",
+		"description": "Survêtement",
+		"price": "69.99 €",
 		"images": [
 			{
-				"url": "./img/T-shirt-black.png"
+				"url": "./img/pants-track-nike-1.png"
 			},
 			{
-				"url": "./img/T-shirt-darkblue.png"
+				"url": "./img/pants-track-nike-2.png"
+			},
+			{
+				"url": "./img/pants-track-nike-3.png"
 			}
 		]
 	},
-
 	{
 		"id": 2,
-		"name": "Oversize T-Shirt",
-		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
-		"price": "52.99",
+		"name": "Veste en cuir",
+		"description": "Veste en cuir véritable",
+		"price": "69.99 €",
 		"images": [
 			{
-				"url": "./img/oversize-T-shirt-blue.png"
+				"url": "./img/pants-track-nike-1.png"
+			},
+			{
+				"url": "./img/pants-track-nike-2.png"
+			},
+			{
+				"url": "./img/pants-track-nike-3.png"
 			}
 		]
 	},
-
 	{
 		"id": 3,
 		"name": "Sweater",
 		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
-		"price": "69.99",
+		"price": "69.99 €",
 		"images": [
 			{
-				"url": "./img/sweater-white.png"
+				"url": "./img/pants-track-nike-1.png"
 			},
 			{
-				"url": "./img/sweater-orange.png"
+				"url": "./img/pants-track-nike-2.png"
 			},
 			{
-				"url": "./img/sweater-pink.png"
+				"url": "./img/pants-track-nike-3.png"
 			}
 		]
 	},
 	{
 		"id": 4,
-		"name": "Jeans",
+		"name": "Sweater",
 		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
-		"price": "60.00",
+		"price": "69.99 €",
 		"images": [
 			{
-				"url": "./img/jeans-blue.png"
-				
+				"url": "./img/pants-track-nike-1.png"
 			},
 			{
-				"url": "./img/jeans-black.png"
+				"url": "./img/pants-track-nike-2.png"
+			},
+			{
+				"url": "./img/pants-track-nike-3.png"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "Sweater",
+		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
+		"price": "69.99 €",
+		"images": [
+			{
+				"url": "./img/pants-track-nike-1.png"
+			},
+			{
+				"url": "./img/pants-track-nike-2.png"
+			},
+			{
+				"url": "./img/pants-track-nike-3.png"
 			}
 		]
 	}
