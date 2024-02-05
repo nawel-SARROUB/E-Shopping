@@ -62,7 +62,18 @@ fetch(jsonFile)
     .catch(error => console.error("Erreur lors de la récupération des données:", error));
 
     
+
+
+
+
     document.addEventListener('DOMContentLoaded', () => {
+        const boxesContainer = document.querySelector("section");
+        const jsonFile = "./products.json";
+    
+        const updateUrlWithGenre = (genre) => {
+            const newUrl = `${window.location.pathname}?genre=${genre}`;
+            window.history.pushState({ path: newUrl }, '', newUrl);
+        };
         // Fonction de filtrage et d'affichage des produits par genre
         const filterAndDisplayProducts = (genre) => {
           fetch(jsonFile)
@@ -118,41 +129,16 @@ fetch(jsonFile)
                 }
                 
             }
-              });
+              });updateUrlWithGenre(genre);
             })
             .catch(error => console.error("Erreur lors de la récupération des données:", error));
+            
         };
         document.getElementById('homme').addEventListener('click', () => filterAndDisplayProducts('homme'));
-  document.getElementById('femme').addEventListener('click', () => filterAndDisplayProducts('femme'));
+        document.getElementById('femme').addEventListener('click', () => filterAndDisplayProducts('femme'));
 
   // Appel initial pour charger tous les produits
   filterAndDisplayProducts(null);
 });
-
-const updateUrlWithGenre = (genre) => {
-    if (history.pushState) {
-      const newurl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?genre=${genre}`;
-      window.history.pushState({ path: newurl }, '', newurl);
-    }
-  };
-  
-  document.getElementById('homme').addEventListener('click', () => {
-    filterAndDisplayProducts('homme');
-    updateUrlWithGenre('homme');
-  });
-  
-  document.getElementById('femme').addEventListener('click', () => {
-    filterAndDisplayProducts('femme');
-    updateUrlWithGenre('femme');
-  });
-  
-  // Lors du chargement de la page, vérifiez s'il y a un paramètre de genre dans l'URL et filtrez les produits
-  const urlParams = new URLSearchParams(window.location.search);
-  const genre = urlParams.get('genre'); // 'homme' ou 'femme'
-  if (genre) {
-    filterAndDisplayProducts(genre);
-  } else {
-    filterAndDisplayProducts(null);
-  }
   
       
