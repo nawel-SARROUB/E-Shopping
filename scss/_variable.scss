@@ -1,6 +1,7 @@
 $fontPrice: 'Jost', sans-serif;
 $fontBase : 'Arial', sans-serif;
 $grey : rgb(54, 54, 54);
+$yellow : #FFD600;
 $headerColor : black;
 
 body {
@@ -16,3 +17,15 @@ body {
 }
 
 a{text-decoration: none;}
+
+.material-symbols-outlined.icon-card {
+    font-size: 35px;
+}
+
+.material-symbols-outlined.icon-card:hover {
+    background-color: $yellow;
+    border-radius: 1.25rem;
+    padding: 3px;
+    padding-top: 6px;
+}
+
