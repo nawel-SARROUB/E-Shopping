@@ -3,7 +3,7 @@
 		"id": 1,
 		"name": "Nike",
 		"description": "Survêtement",
-		"price": "69.99 €",
+		"price": "69.99",
 		"images": [
 			{
 				"url": "./img/pants-track-nike-1.png"
@@ -14,74 +14,393 @@
 			{
 				"url": "./img/pants-track-nike-3.png"
 			}
-		]
+		],
+		"color": "noir",
+		"genre": "homme",
+		"type_produit": "survetement"
 	},
 	{
 		"id": 2,
-		"name": "Veste en cuir",
-		"description": "Veste en cuir véritable",
-		"price": "69.99 €",
+		"name": "DTT - Lucine",
+		"description": "Robe chasuble en velours côtelé avec poches",
+		"price": "39.99",
 		"images": [
 			{
-				"url": "./img/pants-track-nike-1.png"
+				"url": "./img/salopette-jupe-1.png"
 			},
 			{
-				"url": "./img/pants-track-nike-2.png"
+				"url": "./img/salopette-jupe-2.png"
 			},
 			{
-				"url": "./img/pants-track-nike-3.png"
+				"url": "./img/salopette-jupe-3.png"
 			}
-		]
+		],
+		"color": "beige",
+		"genre": "femme",
+		"type_produit": "robe"
 	},
 	{
 		"id": 3,
-		"name": "Sweater",
-		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
-		"price": "69.99 €",
+		"name": "HUGO - Ebor",
+		"description": "Chemise décontractée à manches courtes et à imprimé au dos",
+		"price": "99.99",
 		"images": [
 			{
-				"url": "./img/pants-track-nike-1.png"
+				"url": "./img/chemise-imprime-1.png"
 			},
 			{
-				"url": "./img/pants-track-nike-2.png"
+				"url": "./img/chemise-imprime-2.png"
 			},
 			{
-				"url": "./img/pants-track-nike-3.png"
+				"url": "./img/chemise-imprime-3.png"
 			}
-		]
+		],
+		"color": "rose",
+		"genre": "homme",
+		"type_produit": "chemise"
 	},
 	{
 		"id": 4,
-		"name": "Sweater",
-		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
-		"price": "69.99 €",
+		"name": "Dr Martens - Addina",
+		"description": "Chaussures babies à fleur",
+		"price": "200.99",
 		"images": [
 			{
-				"url": "./img/pants-track-nike-1.png"
+				"url": "./img/docmartens-babies-1.png"
 			},
 			{
-				"url": "./img/pants-track-nike-2.png"
+				"url": "./img/docmartens-babies-2.png"
 			},
 			{
-				"url": "./img/pants-track-nike-3.png"
+				"url": "./img/docmartens-babies-3.png"
 			}
-		]
+		],
+		"color": "noir",
+		"genre": "femme",
+		"type_produit": "chaussure"
 	},
 	{
 		"id": 5,
-		"name": "Sweater",
-		"description": "Quis eiusmod dolor ad incididunt Lorem officia excepteur veniam anim occaecat.",
-		"price": "69.99 €",
+		"name": "The North Face",
+		"description": "Nuptse Retro '96 - Doudoune en duvet",
+		"price": "369.00",
 		"images": [
 			{
-				"url": "./img/pants-track-nike-1.png"
+				"url": "./img/doudoune-nf-1.png"
 			},
 			{
-				"url": "./img/pants-track-nike-2.png"
+				"url": "./img/doudoune-nf-2.png"
 			},
 			{
-				"url": "./img/pants-track-nike-3.png"
+				"url": "./img/doudoune-nf-3.png"
 			}
-		]
+		],
+		"color": "marron",
+		"genre": "femme",
+		"type_produit":"veste"
+	},
+	{
+		"id": 6,
+		"name": "Walk London - Riva",
+		"description": "Mocassins en daim",
+		"price": "85.00",
+		"images": [
+			{
+				"url": "./img/mocassin-daim-1.png"
+			},
+			{
+				"url": "./img/mocassin-daim-2.png"
+			},
+			{
+				"url": "./img/mocassin-daim-3.png"
+			}
+		],
+		"color": "beige",
+		"genre": "homme",
+		"type_produit":"chaussure"
+	},
+	{
+		"id": 7,
+		"name": "Soul Star",
+		"description": "Polo moulant en maille à col zippé",
+		"price": "48.99",
+		"images": [
+			{
+				"url": "./img/polo-jaune-1.png"
+			},
+			{
+				"url": "./img/polo-jaune-2.png"
+			},
+			{
+				"url": "./img/polo-jaune-3.png"
+			}
+		],
+		"color": "jaune",
+		"genre": "homme",
+		"type_produit":"t-shirt"
+	},
+	{
+		"id": 8,
+		"name": "Topshop",
+		"description": "Robe courte oversize en maille à col cheminée",
+		"price": "59.99",
+		"images": [
+			{
+				"url": "./img/robe-khaki-1.png"
+			},
+			{
+				"url": "./img/robe-khaki-2.png"
+			},
+			{
+				"url": "./img/robe-khaki-3.png"
+			}
+		],
+		"color": "vert",
+		"genre": "femme",
+		"type_produit":"robe"
+	},
+	{
+		"id": 9,
+		"name": "Salomon - ACS+",
+		"description": "Baskets",
+		"price": "145.00",
+		"images": [
+			{
+				"url": "./img/salomon-noir-1.png"
+			},
+			{
+				"url": "./img/salomon-noir-2.png"
+			},
+			{
+				"url": "./img/salomon-noir-3.png"
+			}
+		],
+		"color": "noir",
+		"genre": "homme",
+		"type_produit":"chaussure"
+	},
+	{
+		"id": 10,
+		"name": "JNF DESIGN",
+		"description": "Pantalon cargo ample en tissu technique avec ceinture",
+		"price": "49.99",
+		"images": [
+			{
+				"url": "./img/cargo-rouge-1.png"
+			},
+			{
+				"url": "./img/cargo-rouge-2.png"
+			},
+			{
+				"url": "./img/cargo-rouge-3.png"
+			}
+		],
+		"color": "rouge",
+		"genre": "femme",
+		"type_produit":"pantalon"
+	},
+	{
+		"id": 11,
+		"name": "Topshop Tall",
+		"description": "Jean mom",
+		"price": "59.99",
+		"images": [
+			{
+				"url": "./img/jeans-bleu-1.png"
+			},
+			{
+				"url": "./img/jeans-bleu-2.png"
+			},
+			{
+				"url": "./img/jeans-bleu-3.png"
+			}
+		],
+		"color": "bleu",
+		"genre": "femme",
+		"type_produit":"pantalon"
+	},
+	{
+		"id": 12,
+		"name": "Columbia - Bora Bora",
+		"description": "Chapeau de brousse",
+		"price": "33.99",
+		"images": [
+			{
+				"url": "./img/bob-columbia-1.png"
+			},
+			{
+				"url": "./img/bob-columbia-2.png"
+			},
+			{
+				"url": "./img/bob-columbia-3.png"
+			}
+		],
+		"color": "beige",
+		"genre": "homme",
+		"type_produit":"accessoire"
+	},
+	{
+		"id": 13,
+		"name": "JNF DESIGN",
+		"description": "Veste d'entraîneur ultra oversize en imitation peau de mouton imprimé fleuri",
+		"price": "80.00",
+		"images": [
+			{
+				"url": "./img/pilou-violet-1.png"
+			},
+			{
+				"url": "./img/pilou-violet-2.png"
+			},
+			{
+				"url": "./img/pilou-violet-3.png"
+			}
+		],
+		"color": "violet",
+		"genre": "homme",
+		"type_produit":"veste"
+	},
+	{
+		"id": 14,
+		"name": "adidas Originals - Gazelle",
+		"description": "Baskets",
+		"price": "110.00",
+		"images": [
+			{
+				"url": "./img/gazelle-verte-1.png"
+			},
+			{
+				"url": "./img/gazelle-verte-2.png"
+			},
+			{
+				"url": "./img/gazelle-verte-3.png"
+			}
+		],
+		"color": "vert",
+		"genre": "femme",
+		"type_produit":"chaussure"
+	},
+	{
+		"id": 15,
+		"name": "Public Desire - Evander",
+		"description": "Sac fourre-tout en nylon matelassé",
+		"price": "24.99",
+		"images": [
+			{
+				"url": "./img/sac-orange-1.png"
+			},
+			{
+				"url": "./img/sac-orange-2.png"
+			},
+			{
+				"url": "./img/sac-orange-3.png"
+			}
+		],
+		"color": "orange",
+		"genre": "femme",
+		"type_produit":"accessoire"
+	},
+	{
+		"id": 16,
+		"name": "Berghaus - Mayeurvate",
+		"description": "Veste courte tissée",
+		"price": "124.99",
+		"images": [
+			{
+				"url": "./img/kway-bleu-1.png"
+			},
+			{
+				"url": "./img/kway-bleu-2.png"
+			},
+			{
+				"url": "./img/kway-bleu-3.png"
+			}
+		],
+		"color": "bleu",
+		"genre": "femme",
+		"type_produit":"veste"
+	},
+	{
+		"id": 17,
+		"name": "Vivienne Westwood",
+		"description": "Montre avec bracelet à maillons épais",
+		"price": "400.99",
+		"images": [
+			{
+				"url": "./img/vw-watch-1.png"
+			},
+			{
+				"url": "./img/vw-watch-2.png"
+			},
+			{
+				"url": "./img/vw-watch-3.png"
+			}
+		],
+		"color": "jaune",
+		"genre": "homme",
+		"type_produit":"accessoire"
+	},
+	{
+		"id": 18,
+		"name": "Miss Selfridge",
+		"description": "Robe longue avec imprimé ombré et manches longues",
+		"price": "39.99",
+		"images": [
+			{
+				"url": "./img/robe-rouge-1.png"
+			},
+			{
+				"url": "./img/robe-rouge-2.png"
+			},
+			{
+				"url": "./img/robe-rouge-3.png"
+			}
+		],
+		"color": "rouge",
+		"genre": "femme",
+		"type_produit":"robe"
+	},
+	{
+		"id": 19,
+		"name": "Raid - Brina",
+		"description": "Chaussures style western ouvertes à l'arrière",
+		"price": "50.99",
+		"images": [
+			{
+				"url": "./img/talon-blanc-1.png"
+			},
+			{
+				"url": "./img/talon-blanc-2.png"
+			},
+			{
+				"url": "./img/talon-blanc-3.png"
+			}
+		],
+		"color": "blanc",
+		"genre": "femme",
+		"type_produit":"chaussure"
+	},
+	{
+		"id": 20,
+		"name": "JNF DESIGN",
+		"description": "Emsemble de costume ajusté",
+		"price": "70.00",
+		"images": [
+			{
+				"url": "./img/costard-gris-1.png"
+			},
+			{
+				"url": "./img/costard-gris-2.png"
+			},
+			{
+				"url": "./img/costard-gris-3.png"
+			}
+		],
+		"color": "gris",
+		"genre": "homme",
+		"type_produit":"pantalon"
+
 	}
+
+
+
 ]

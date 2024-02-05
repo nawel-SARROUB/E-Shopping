@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -13,6 +12,17 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.material-symbols-outlined.icon-card {
+  font-size: 35px;
+}
+
+.material-symbols-outlined.icon-card:hover {
+  background-color: #FFD600;
+  border-radius: 1.25rem;
+  padding: 3px;
+  padding-top: 6px;
 }
 
 header {
@@ -38,9 +48,33 @@ nav a {
   margin: 0 15px;
 }
 
-h1 {
+.title-et-genre {
   display: flex;
-  width: 50%;
+  align-items: center;
+  width: 35%;
+  place-content: space-between;
+}
+
+.titre-jnf {
+  display: flex;
+  height: 80px;
+}
+
+.title-genre {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: larger;
+}
+
+.genre-section {
+  display: flex;
+  margin-left: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.genre-section .homme:hover, .genre-section .femme:hover {
+  color: #FFD600;
 }
 
 .filters {
@@ -48,15 +82,21 @@ h1 {
   height: fit-content;
   align-self: center;
   align-items: center;
-  padding: 12PX;
-  border-radius: 0.75rem;
+  padding: 10PX;
   background-color: unset;
-  border-color: rgb(0, 0, 0);
-  border-width: 2pX;
+  border-width: 1pX;
+  box-shadow: 7px 7px 0px 1px rgb(0, 0, 0);
+  -webkit-box-shadow: 7px 7px 0px 1px rgb(0, 0, 0);
+  -moz-box-shadow: 7px 7px 0px 1px rgb(0, 0, 0);
   font-size: medium;
   font-weight: 600;
+  font-size: larger;
   justify-content: space-around;
   cursor: pointer;
+}
+
+.filters:hover {
+  background-color: #FFD600;
 }
 
 .material-symbols-outlined {
@@ -84,8 +124,6 @@ h1 {
   right: -100%;
   width: 400px;
   height: 100%;
-  border-top-left-radius: 1.25REM;
-  border-bottom-left-radius: 1.25REM;
   background-color: #ffffff;
   transition: right 0.4s ease;
   z-index: 999;
@@ -207,10 +245,20 @@ h1 {
 }
 
 .btn-valider {
+  margin-top: 50px;
   display: flex;
-  width: fit-content;
+  height: fit-content;
   align-self: center;
-  margin-top: 30PX;
+  align-items: center;
+  padding: 10PX;
+  background-color: black;
+  border-width: 1pX;
+  font-size: medium;
+  font-weight: 600;
+  font-size: larger;
+  justify-content: space-around;
+  cursor: pointer;
+  color: #ffffff;
 }
 
 section {
@@ -266,6 +314,7 @@ main {
   font-weight: 900;
   color: rgb(54, 54, 54);
   width: 100%;
+  font-size: 15px;
 }
 
 .ajout-button {
@@ -273,7 +322,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-top: auto; /* Ceci pousse le contenu vers le bas */
+  margin-top: auto;
 }
 
 .icon-card {
@@ -289,36 +338,9 @@ main {
 .part-infos {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Ceci aligne le contenu en haut */
-  width: 100%; /* Utilisez toute la largeur de .box */
-  flex-grow: 1; /* Ceci permet à part-infos de prendre tout l'espace disponible */
-}
-
-.image-slider {
-  margin: 0 auto;
-}
-
-.image-slider .slick-slide {
-  position: absolute; /* S'assure que le slide est bien positionné */
-  overflow: hidden;
-}
-
-.image-slider .slick-slide img {
-  width: 100%; /* Assurez-vous que l'image prend la largeur totale du slide */
-  height: auto; /* La hauteur est réglée automatiquement pour conserver les proportions */
-  transition: transform 0.3s ease; /* Transition fluide pour le zoom */
-  position: relative; /* Position relative pour rester dans le flux normal du document */
-}
-
-.image-slider .slick-list {
-  margin: 0 -10px;
-}
-
-.slick-slide img {
+  justify-content: flex-start;
   width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  display: flex;
+  flex-grow: 1;
 }
 
 /*# sourceMappingURL=index.css.map */

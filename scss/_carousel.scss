@@ -1,29 +1,2 @@
-.image-slider {
-    margin: 0 auto;
-  }
-  
-  .image-slider .slick-slide {
-    position: absolute; /* S'assure que le slide est bien positionné */
-    overflow: hidden;
-  }
 
-.image-slider .slick-slide img {
-  width: 100%; /* Assurez-vous que l'image prend la largeur totale du slide */
-  height: auto; /* La hauteur est réglée automatiquement pour conserver les proportions */
-  transition: transform 0.3s ease; /* Transition fluide pour le zoom */
-  position: relative; /* Position relative pour rester dans le flux normal du document */
-}
-
-  .image-slider .slick-list {
-    margin: 0 -10px;
-  }
- 
-  .slick-slide img {
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-       display: flex;
-  }
-
-  
   

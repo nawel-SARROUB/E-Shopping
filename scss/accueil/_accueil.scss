@@ -50,15 +50,16 @@ main {
     font-family: $fontPrice;
     font-weight: 900;
     color: $grey;
-    width: 100%; // Utilisez la pleine largeur pour le conteneur
+    width: 100%;
+    font-size: 15px;
 }
 
 .ajout-button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%; // Utilisez la pleine largeur pour le conteneur
-    margin-top: auto; /* Ceci pousse le contenu vers le bas */
+    width: 100%;
+    margin-top: auto;
 }
 
 .icon-card {
@@ -75,7 +76,7 @@ main {
 .part-infos {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ceci aligne le contenu en haut */
-    width: 100%; /* Utilisez toute la largeur de .box */
-    flex-grow: 1; /* Ceci permet à part-infos de prendre tout l'espace disponible */
+    justify-content: flex-start;
+    width: 100%;
+    flex-grow: 1;
 }
