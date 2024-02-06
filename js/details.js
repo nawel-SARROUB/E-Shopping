@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="titre-articles">${selectedProduct.name}</p>
                     <p class="description-articles">${selectedProduct.description}</p>
                     <p class="price">${selectedProduct.price}</p>
-                    <a href="index.html">Retour à la liste des produits</a>
+                    <a href="accueil.html">Retour à la liste des produits</a>
                 `;
             } else {
                 // Affichez un message si le produit n'est pas trouvé

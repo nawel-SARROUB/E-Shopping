@@ -3,6 +3,8 @@ const filterModal = document.getElementById('filterModal');
 const bodyElement = document.body;
 
 
+let selectedColors = [];
+
 filterButton.addEventListener('click', (event) => {
     event.stopPropagation();
 
@@ -19,17 +21,28 @@ function closeModal() {
 
 }
 
+
+
 function toggleColor(element) {
+    const color = element.title; // ou une autre manière d'identifier la couleur
     element.classList.toggle('checked');
+
     if (element.classList.contains('checked')) {
-        element.innerHTML = '&#x2713;';
-        element.style.display = 'flex';
-        element.style.alignItems = 'center';
-        element.style.placeContent = 'center';
-
+        // Ajouter la couleur sélectionnée au tableau
+        selectedColors.push(color);
     } else {
-        element.innerHTML = '';
+        // Retirer la couleur désélectionnée du tableau
+        selectedColors = selectedColors.filter(c => c !== color);
     }
-
 }
+
+function getSelectedProductTypes() {
+    const productTypes = [];
+    const checkboxes = document.querySelectorAll('.checkbox-categ input[type="checkbox"]:checked');
+    checkboxes.forEach(checkbox => {
+        productTypes.push(checkbox.name);
+    });
+    return productTypes;
+}
+
 
