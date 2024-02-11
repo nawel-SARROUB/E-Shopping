@@ -170,3 +170,4 @@ function getSelectedGenre() {
     // Retourner la sélection actuelle du genre
     return selectedGenre;
 }
+
