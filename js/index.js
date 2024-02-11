@@ -173,17 +173,6 @@ function getSelectedGenre() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
        
 
 
