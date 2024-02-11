@@ -36,6 +36,7 @@ main {
     cursor: pointer;
 }
 
+
 [class*="articles"] {
     font-size: smaller;
     width: 100%; // Assurez-vous que les éléments prennent toute la largeur disponible
@@ -79,4 +80,20 @@ main {
     justify-content: flex-start;
     width: 100%;
     flex-grow: 1;
+}
+
+.material-symbols-outlined.icon-card {
+    font-size: 20px;
+    font-weight: 800;
+    display: contents;
+}
+
+.btn-add{
+    background-color: $yellow;
+    width: 40px;
+    height: 40px;
+    border-color: black 1px;
+    box-shadow: 5px 5px 0px 1px rgba(0,0,0,1);
+-webkit-box-shadow: 5px 5px 0px 1px rgba(0,0,0,1);
+-moz-box-shadow: 5px 5px 0px 1px rgba(0,0,0,1);
 }
