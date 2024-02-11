@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                     <div class="ajout-button">
                         <p class="price-articles">${price} €</p>
-                        <i class="material-symbols-outlined icon-card">favorite</i>
+                        <button class="btn-add"><i class="material-symbols-outlined icon-card" id="addCart">add</i></button>
                     </div>
                 </div>
             `;
@@ -170,10 +170,4 @@ function getSelectedGenre() {
     // Retourner la sélection actuelle du genre
     return selectedGenre;
 }
-
-
-
-       
-
-
 

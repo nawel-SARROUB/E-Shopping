@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/filtres.js"async></script>
     <script src="js/modal-flt.js" async></script>
-    <script src="js/index.js" async></script>
     <script src="js/modal-cart.js" async></script>
+    <script src="js/index.js" async></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" async></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" async></script>
     <link rel="shortcut icon" href="/img/LOGO.svg" type="image/x-icon">
@@ -17,7 +17,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Just New Findings - Shopping en ligne</title>
 </head>
 
@@ -34,7 +35,8 @@
             
             <div class="icons-corner">
                 <i class="material-symbols-outlined">search</i>
-                <i class="material-symbols-outlined">shopping_bag</i>
+                <i class="material-symbols-outlined" id="modal-cart">shopping_bag</i>
+                <span id="nb-cart-items">0</span>
                 <i class="material-symbols-outlined">account_circle</i>
             </div>
             
@@ -152,6 +154,22 @@
         </div>
     </div>
     
+    <div class="cartSlide">
+        <div class="btn-close-cart">
+            <span class="material-symbols-outlined closeModalCart" id="closeModalCart">
+                close
+            </span>
+        </div>
+        <div class="container-cart">
+            <p class="cart-title">MON PANIER</p>
+            <div class="list-shopping"></div>
+        </div>
+        <div class="list-btns">
+            <button type="submit" class="check-shopping">VALIDER LE PANIER</button>
+            <button type="reset" class="check-shopping" id="reset">REINITIALISER</button>
+        </div>
+        
+    </div>
 </body>
 
 </html>
