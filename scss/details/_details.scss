@@ -1,0 +1,89 @@
+.product-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .display-affiche {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; // Pour aligner les éléments verticalement au centre si nécessaire
+    width: 50%; // Pour s'assurer que la largeur est à 100% du conteneur parent
+    margin-bottom: 10px; // Ajouter un espace en bas du conteneur
+  }
+
+  .product-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; // Ajoutez une marge supérieure pour l'espace
+    // border: 1px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-bottom: 5rem ;
+    height: 30rem;
+
+    .product-carousel {
+      flex: 1; // Faites en sorte que le carrousel occupe tout l'espace disponible
+      margin: 1rem 2rem; // Ajoutez un espace entre le carrousel et les détails
+      width: 50px;
+    }
+
+    .other-details {
+      flex: 1; // Faites en sorte que les autres détails occupent tout l'espace disponible
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+      align-items: center; // Alignez les éléments sur la droite
+      .price-detail {
+        font-family: $fontPrice;
+        font-weight: 900;
+        color: $grey;
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+      }
+      .description-box {
+        border: 1px solid #ccc; // Ajouter une bordure autour de la description
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); // Ajouter une ombre douce à la description
+        padding: 10px; // Ajouter un remplissage à l'intérieur de la description
+        margin-bottom: 10px; // Ajouter un espace entre la description et le bouton
+        width: 80%; // Assurer que la description occupe toute la largeur du conteneur
+      }
+    }
+  }
+
+  .product-image {
+    width: 100%; // Pour que l'image occupe toute la largeur disponible
+    height: auto;
+  }
+}
+
+
+.slick-prev,
+.slick-next {
+    font-size: 24px;
+    line-height: 1;
+    color: black;
+    background: transparent;
+    border: none;
+}
+
+.slick-prev {
+    position: absolute;
+    left: -25px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.slick-next {
+    position: absolute;
+    right: -1px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+hr {
+    overflow: visible;
+}
