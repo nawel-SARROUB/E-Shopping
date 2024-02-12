@@ -4,41 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-
-    <title>Détails du Produit</title>
+    <link rel="shortcut icon" href="/img/LOGO.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <title></title>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <div class="title-et-genre">
-          <img
-            src="./img/TITLE.svg"
-            alt="titre-JustNewFindings"
-            class="titre-jnf"
-          />
+          
+            <a href="./accueil.html">
+              <img src="./img/TITLE.svg" alt="titre-JustNewFindings" class="titre-jnf" />
+            </a>
+          
           <div class="genre-section">
             <p class="title-genre homme" id="homme">HOMME</p>
             <p class="title-genre femme" id="femme">FEMME</p>
@@ -47,16 +31,16 @@
 
         <div class="icons-corner">
           <i class="material-symbols-outlined">search</i>
-          <i class="material-symbols-outlined">shopping_bag</i>
+          <i class="material-symbols-outlined" id="modal-cart">shopping_bag</i>
           <i class="material-symbols-outlined">account_circle</i>
         </div>
       </nav>
     </header>
     <div class="product-detail-container">
       <div class="display-affiche">
-        <h1 id="productName">Product Name</h1>
+        <p id="productName">Product Name</p>
         <button class="filters">
-          <a href="accueil.html"> Return to Products List </a>
+          <a href="accueil.html"> Retour à l'accueil </a>
         </button>
       </div>
       <hr>
@@ -64,17 +48,40 @@
         <div id="productCarousel" class="product-carousel"></div>
 
         <div class="other-details">
-          <p id="productPrice" class="price-detail">$0.00</p>
+          <p id="productIntitule"></p>
           <div class="description-box">
-            <p id="productDescription">Description</p>
+            <p id="productDescription"></p>
           </div>
-          <button id="addToCart" class="filters">Add to Cart</button>
+          <p id="productPrice" class="price-detail"></p>
+          <select class="list-size">
+            <option value="" disabled selected>Sélectionner une taille</option>
+            <option value="size-S">S</option>
+            <option value="size-M">M</option>
+            <option value="size-L">L</option>
+          </select>
+          <button id="addToCart" class="addPanier">AJOUTER AU PANIER</button>
         </div>
       </div>
     </div>
 
+    <div class="cartSlide">
+      <div class="btn-close-cart">
+          <span class="material-symbols-outlined closeModalCart" id="closeModalCart">
+              close
+          </span>
+      </div>
+      <div class="container-cart">
+          <p class="cart-title">MON PANIER</p>
+          <div class="list-shopping"></div>
+      </div>
+      <div class="list-btns">
+          <button type="submit" class="check-shopping">VALIDER LE PANIER</button>
+          <button type="reset" class="check-shopping" id="reset">REINITIALISER</button>
+      </div>
+      
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/details.js"></script>
+    <script src="js/modal-cart.js"></script>
   </body>
 </html>
