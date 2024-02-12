@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProductDetails(productId);
 });
 
+
+
 function fetchProductDetails(productId) {
     fetch('products.json')
         .then(response => response.json())
@@ -21,14 +23,15 @@ function fetchProductDetails(productId) {
 }
 
 function displayProductDetails(product) {
-    // Mise à jour des détails du produit
-    document.getElementById('productName').textContent = product.name;
-    document.getElementById('productPrice').textContent = `${product.price} euro`;
+    document.getElementById('productIntitule').textContent = product.name;
+    document.getElementById('productName').textContent = `Tous les produits > ${product.type_produit} > ${product.name}`;
+    document.getElementById('productPrice').textContent = `Prix : ${product.price} €`;
     document.getElementById('productDescription').textContent = product.description;
 
-    // Mise à jour du carousel avec les images du produit
+    document.title = `JNF | ${product.name}`;
+
     const carouselElement = document.getElementById('productCarousel');
-    carouselElement.innerHTML = ''; // Efface les images existantes
+    carouselElement.innerHTML = '';
 
     product.images.forEach(image => {
         const div = document.createElement('div');
@@ -38,7 +41,6 @@ function displayProductDetails(product) {
         carouselElement.appendChild(div);
     });
 
-    // Initialisation ou réinitialisation du carousel Slick
     $(carouselElement).slick({
         infinite: true,
         speed: 300,
