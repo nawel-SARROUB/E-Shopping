@@ -1,68 +1,76 @@
-let iconCart = document.querySelector('#modal-cart');
-let iconClose = document.querySelector('#closeModalCart');
-let cartSlideShow = document.querySelector('.cartSlide');
+let cart = [];
 
 
-iconCart.addEventListener('click', () =>{
-    cartSlideShow.classList.toggle('show')
-})
+document.addEventListener('DOMContentLoaded', () => {
+    const cartSlideShow = document.querySelector('.cartSlide');
+    const iconCart = document.querySelector('#modal-cart');
+    const iconClose = document.querySelector('#closeModalCart');
+    const cartContents = document.querySelector('.list-shopping');
 
-iconClose.addEventListener('click', () =>{
-    cartSlideShow.classList.remove('show')
-})
-
-
+    
 
 
+// Afficher ou masquer le panier
+iconCart.addEventListener('click', () => {
+  cartSlideShow.classList.toggle('show');
+});
 
- let cart = [];
- // Function to add an item to the cart
- function addToCart(id) {
-   fetch('products.json')  // Fetch the product details from the JSON file
-     .then(response => response.json())
-     .then(products => {
-       const product = products.find(p => p.id === id);  // Find the product by ID
-       if (!product) throw new Error('Votre panier est vide.');
-       const existingItem = cart.find(item => item.id === product.id);
-       if (existingItem) {
-         existingItem.quantity++;  // Increase the quantity for existing item
-       } else {
-         cart.push({ ...product, quantity: 1 });  // Add a new item to the cart
-       }
-       updateCartDisplay();  // Update the display of the cart
-     })
-     .catch(error => console.error('Error adding item to cart:', error));
- }
- // Function to update the display of the cart
- function updateCartDisplay() {
-   const cartSlideElement = document.querySelector('.cartSlide');
-   cartSlideElement.innerHTML = '';  // Clear the current display
-   cart.forEach(item => {
-     const itemHTML = `
-       <div class="content-liste">
-         <img src="${item.images[0].url}" alt="image de l'article dans panier" class="img-product-cart">
-         <div class="content-info-articles">
-           <div class="cart-nom-article">${item.name}</div>
-           <div class="cart-prixTotal">${item.price} €</div>
-         </div>
-         <div class="cart-quantity-article">
-           <span class="material-symbols-outlined btn-quantity" data-id="${item.id}" id="minus">remove</span>
-           <span class="number-qt">${item.quantity}</span>
-           <span class="material-symbols-outlined btn-quantity" data-id="${item.id}" id="plus">add</span>
-         </div>
-       </div>
-     `;
-     cartSlideElement.innerHTML += itemHTML;  // Append the new item HTML
-   });
- }
-   // Event listener for adding items to the cart
-   document.querySelectorAll('.icon-card').forEach(button => {
-     button.addEventListener('click', event => {
-       if (event.target.classList.contains('icon-card')) {
-         const productId = event.target.dataset.productId;
-         addToCart(productId);
-       }
-     });
-   });
+iconClose.addEventListener('click', () => {
+  cartSlideShow.classList.remove('show');
+});
 
-  
+
+document.addEventListener('click', event => {
+  let targetElement = event.target;
+
+  // Vérifier si l'élément cliqué ou l'un de ses parents possède l'une des classes ciblées
+  while (targetElement != null && !targetElement.classList.contains('btn-add-to-cart') && !targetElement.classList.contains('addPanier')) {
+      targetElement = targetElement.parentElement;
+  }
+
+  // Si un élément cible a été trouvé
+  if (targetElement) {
+      const productId = targetElement.getAttribute('data-id');
+      if (productId) {
+          addToCart(productId);
+      }
+  }
+});
+
+    // Ajouter un article au panier
+    function addToCart(productId) {
+      console.log("Ajout au panier du produit avec l’ID:", productId);
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                const product = products.find(p => p.id === parseInt(productId));
+                if (!product) {
+                    throw new Error('Produit non trouvé.');
+                }
+                const existingItem = cart.find(item => item.id === product.id);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                updateCartDisplay();
+            })
+            .catch(error => console.error('Erreur lors de l’ajout au panier:', error));
+    }
+
+    // Mettre à jour l'affichage du panier
+    function updateCartDisplay() {
+        cartContents.innerHTML = '';
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.innerHTML = `
+                <div>
+                    <h4>${item.name}</h4>
+                    <p>${item.price} €</p>
+                    <p>Quantité: ${item.quantity}</p>
+                </div>
+            `;
+            cartContents.appendChild(itemElement);
+        });
+    }
+});

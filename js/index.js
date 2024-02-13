@@ -50,18 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
             boxElement.setAttribute("data-product", id);
 
             boxElement.innerHTML = `
-                <a href="details.html?id=${id}" class="details">
-                    <img src="${images[0].url}" alt="${name}" class="images-style" />
-                </a>
-                <div class="part-infos">
-                    <a href="details.html?id=${id}">
-                        <p class="titre-articles">${name} - ${description}</p>
-                    </a>
-                    <div class="ajout-button">
-                        <p class="price-articles">${price} €</p>
-                        <button class="btn-add"><i class="material-symbols-outlined icon-card" id="addCart">add</i></button>
-                    </div>
-                </div>
+            <a href="details.html?id=${id}" class="details">
+            <img src="${images[0].url}" alt="${name}" class="images-style" />
+        </a>
+        <div class="part-infos">
+            <a href="details.html?id=${id}">
+                <p class="titre-articles">${name} - ${description}</p>
+            </a>
+            <div class="ajout-button">
+                <p class="price-articles">${price} €</p>
+                <button class="btn-add-to-cart" data-id="${id}"><i class="material-symbols-outlined icon-card">add</i></button>
+            </div>
+        </div>
+        
             `;
 
             if (images.length > 2) {
