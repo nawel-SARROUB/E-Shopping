@@ -1,0 +1,137 @@
+#nb-cart-items {
+    font-family: unset;
+}
+
+.cartSlide{
+    background-color: $grey;
+    width: 25%;
+    padding: 1%;
+    display: flex ;
+    flex-direction: column;
+    inset: 0 -100% 0 auto;
+    position: fixed;
+    transition: right 0.4s ease;
+    z-index: 999;
+}
+
+.cartSlide.show {
+    right: 0;
+}
+
+.cartSlide.close{
+    right: -100%;
+}
+.containerCart{
+    display: contents;
+}
+
+#closeModalCart{
+    display: flex;
+    flex-direction: row-reverse;
+    color: white;
+}
+
+.check-shopping{
+    cursor: pointer;
+}
+
+.cart-title{
+    color: white;
+    text-shadow: 3px 3px 0px rgba(0,0,0,1);
+    -webkit-text-stroke: black 1px;
+    font-size: xx-large;
+    font-weight: 800;
+    font-family: $fontBase;
+}
+
+.list-btns{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    //margin-top: auto;
+}
+
+.check-shopping{
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: medium;
+    font-family: $fontPrice;
+    background-color: white;
+}
+
+#reset{
+    background-color: black;
+    color: white;
+}
+
+.list-shopping{
+    padding: 3%;
+    margin-bottom: 5%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.list-shopping::-webkit-scrollbar-thumb{
+    background-color: aqua;
+}
+.content-liste{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+}
+
+.content-liste:nth-child(even){
+    background-color: rgb(44, 43, 43);
+}
+
+
+
+#img-product-cart{
+    height: 100px;
+    object-fit: contain;
+}
+
+.content-info-articles{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin-left: 3%;
+    justify-content: space-between;
+    color: white;
+
+}
+
+.cart-quantity-article {
+    display: flex;        /* Use flexbox */
+    align-items: center;  /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content, if needed */
+    width: 40%;
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn-quantity,
+  .number-qt {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: $yellow;
+    border: none;
+    margin: 0 1px;
+    padding: 3px;
+    text-align: -webkit-center;
+    font-family: $fontPrice;
+  }
+  
+  .number-qt {
+    background-color: transparent;
+    color: white;
+    line-height: 25px;
+    text-align: center;
+  }
+
+  .container-cart{
+    display: contents;
+  }
