@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productId = parseInt(params.get('id'), 10);
     fetchProductDetails(productId);
+
+    // Gestionnaire pour l'ajout au panier
+    const addToCartButton = document.getElementById('addToCart');
+    addToCartButton.addEventListener('click', () => {
+        const productId = addToCartButton.getAttribute('data-id');
+        addToCart(productId);
+    });
 });
 
 
@@ -27,6 +34,7 @@ function displayProductDetails(product) {
     document.getElementById('productName').textContent = `Tous les produits > ${product.type_produit} > ${product.name}`;
     document.getElementById('productPrice').textContent = `Prix : ${product.price} €`;
     document.getElementById('productDescription').textContent = product.description;
+    
 
     document.title = `JNF | ${product.name}`;
 
@@ -49,4 +57,6 @@ function displayProductDetails(product) {
         prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
         nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>'
     });
+
+    document.getElementById('addToCart').setAttribute('data-id', product.id);
 }
