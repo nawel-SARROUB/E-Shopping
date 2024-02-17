@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const productId = parseInt(params.get('id'), 10);
     fetchProductDetails(productId);
 
-    // Gestionnaire pour l'ajout au panier
     const addToCartButton = document.getElementById('addToCart');
     addToCartButton.addEventListener('click', () => {
         const productId = addToCartButton.getAttribute('data-id');
@@ -29,12 +28,24 @@ function fetchProductDetails(productId) {
         });
 }
 
+
 function displayProductDetails(product) {
+
+    const isOnSale = product.isOnSale;
+    const numericPrice = parseFloat(product.price);
+    const salePrice = isOnSale ? (numericPrice - (numericPrice * product.discountRate / 100)).toFixed(2) : numericPrice.toFixed(2);
+
     document.getElementById('productIntitule').textContent = product.name;
-    document.getElementById('productName').textContent = `Tous les produits > ${product.type_produit} > ${product.name}`;
-    document.getElementById('productPrice').textContent = `Prix : ${product.price} €`;
+    document.getElementById('productName').textContent = 'Tous les produits > ' + product.type_produit + ' > ' + product.name;
+
+    const priceElement = document.getElementById('productPrice');
+    if (isOnSale) {
+        priceElement.innerHTML = `<span class="original-price">${numericPrice.toFixed(2)} €</span> <span class="sale-price">${salePrice} €</span><span class="discountRate">(-${product.discountRate}%)</span>`;
+    } else {
+        priceElement.textContent = `Prix : ${numericPrice.toFixed(2)} €`;
+    }
+
     document.getElementById('productDescription').textContent = product.description;
-    
 
     document.title = `JNF | ${product.name}`;
 

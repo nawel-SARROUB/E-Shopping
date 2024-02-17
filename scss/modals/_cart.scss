@@ -12,6 +12,7 @@
     position: fixed;
     transition: right 0.4s ease;
     z-index: 999;
+    overflow: hidden;
 }
 
 .cartSlide.show {
@@ -42,12 +43,13 @@
     font-size: xx-large;
     font-weight: 800;
     font-family: $fontBase;
+    margin-top: auto;
 }
 
 .list-btns{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    //margin-top: auto;
+    margin-top: auto;
 }
 
 .check-shopping{
@@ -70,12 +72,23 @@
     min-height: auto;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    flex-grow: 1;
     scrollbar-width: thin;
+    height: 60vh;
+    overflow-y: auto;
 }
 
-.list-shopping::-webkit-scrollbar-thumb{
-    background-color: aqua;
+.elementCart{
+    margin-left: 5%;
+    
+    align-self: center;
+    &Name{
+        color: $yellow;
+        margin: auto;
+    }
+    &Price,&Quantity{
+        color: white;
+    }
 }
 .content-liste{
     display: flex;
@@ -87,52 +100,44 @@
     background-color: rgb(44, 43, 43);
 }
 
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+    justify-content: flex-start;
+}
+
+.cart-buttons {
+    margin-top: auto; /* Les pousse vers le bas */
+}
 
 
-#img-product-cart{
+.cart-item-image{
     height: 100px;
     object-fit: contain;
 }
 
-.content-info-articles{
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
-    margin-left: 3%;
-    justify-content: space-between;
-    color: white;
-
+.remove-item{
+    display: block;
+    height: min-content;
+    align-self: center;
+    margin-left: auto;
+    background-color: #262626;
+    border: none;
+    color: rgb(131, 131, 131);
 }
 
-.cart-quantity-article {
-    display: flex;        /* Use flexbox */
-    align-items: center;  /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content, if needed */
-    width: 40%;
-    color: rgb(0, 0, 0);
-  }
-  
-  .btn-quantity,
-  .number-qt {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background-color: $yellow;
+.increase-quantity, .decrease-quantity {
+    background-color: black;
     border: none;
-    margin: 0 1px;
-    padding: 3px;
-    text-align: -webkit-center;
+    color: $yellow;
+}
+
+.total-amount{
+    color : white;
     font-family: $fontPrice;
-  }
-  
-  .number-qt {
-    background-color: transparent;
-    color: white;
-    line-height: 25px;
-    text-align: center;
-  }
-
-  .container-cart{
-    display: contents;
-  }
-
+    font-weight: 800;
+    margin-top: auto;
+    align-self: self-end;
+    padding: 10px 0;
+}

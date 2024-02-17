@@ -4,6 +4,8 @@
 		"name": "Nike",
 		"description": "Survêtement",
 		"price": "69.99",
+		"isOnSale": true,
+  		"discountRate": 30,
 		"images": [
 			{
 				"url": "./img/pants-track-nike-1.png"
@@ -84,6 +86,8 @@
 		"name": "The North Face",
 		"description": "Nuptse Retro '96 - Doudoune en duvet",
 		"price": "369.00",
+		"isOnSale": true,
+  		"discountRate": 50,
 		"images": [
 			{
 				"url": "./img/doudoune-nf-1.png"
@@ -124,6 +128,8 @@
 		"name": "Soul Star",
 		"description": "Polo moulant en maille à col zippé",
 		"price": "48.99",
+		"isOnSale": true,
+  		"discountRate": 20,
 		"images": [
 			{
 				"url": "./img/polo-jaune-1.png"
@@ -144,6 +150,8 @@
 		"name": "Topshop",
 		"description": "Robe courte oversize en maille à col cheminée",
 		"price": "59.99",
+		"isOnSale": true,
+  		"discountRate": 25,
 		"images": [
 			{
 				"url": "./img/robe-khaki-1.png"
@@ -184,6 +192,8 @@
 		"name": "JNF DESIGN",
 		"description": "Pantalon cargo ample en tissu technique avec ceinture",
 		"price": "49.99",
+		"isOnSale": true,
+  		"discountRate": 65,
 		"images": [
 			{
 				"url": "./img/cargo-rouge-1.png"

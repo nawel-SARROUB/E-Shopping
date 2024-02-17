@@ -5,6 +5,7 @@ const bodyElement = document.body;
 
 let selectedColors = [];
 
+
 filterButton.addEventListener('click', (event) => {
     event.stopPropagation();
 
@@ -24,14 +25,13 @@ function closeModal() {
 
 
 function toggleColor(element) {
-    const color = element.title; // ou une autre manière d'identifier la couleur
+    const color = element.title;
     element.classList.toggle('checked');
 
     if (element.classList.contains('checked')) {
-        // Ajouter la couleur sélectionnée au tableau
+       
         selectedColors.push(color);
     } else {
-        // Retirer la couleur désélectionnée du tableau
         selectedColors = selectedColors.filter(c => c !== color);
     }
 }
@@ -44,5 +44,8 @@ function getSelectedProductTypes() {
     });
     return productTypes;
 }
+
+
+
 
 
