@@ -1,10 +1,11 @@
 let selectedGenre = null; 
 
+let selectedSaleFilter = 'all';
+
 document.addEventListener('DOMContentLoaded', () => {
     const boxesContainer = document.getElementById('productsContainer');
-    const validateButton = document.querySelector('.btn-valider'); // Sélecteur pour le bouton 'Valider'
+    const validateButton = document.querySelector('.btn-valider');
     const jsonFile = "./products.json";
-
 
     document.getElementById('homme').addEventListener('click', () => {
         selectedGenre = 'homme';
@@ -16,23 +17,29 @@ document.addEventListener('DOMContentLoaded', () => {
         filterAndDisplayProducts(selectedGenre, getSelectedSortOrder());
     });
 
+    document.querySelector('.titre-jnf').addEventListener('click', () => {
+        filterAndDisplayProducts(null, getSelectedSortOrder());
+    });
+
     if (validateButton) {
         validateButton.addEventListener('click', () => {
-            filterAndDisplayProducts(selectedGenre, getSelectedSortOrder());
+            filterAndDisplayProducts(selectedGenre, getSelectedSortOrder(), selectedSaleFilter);
             closeModal();
         });
     }
+
+    document.querySelectorAll('input[name="saleFilter"]').forEach(radioButton => {
+        radioButton.addEventListener('change', (event) => {
+            selectedSaleFilter = event.target.value;
+            filterAndDisplayProducts(selectedGenre, getSelectedSortOrder());
+        });
+    });
 
     const updateUrlWithGenre = (genre, sortOrder) => {
         const newUrl = `${window.location.pathname}?genre=${genre}&sortOrder=${sortOrder}`;
         window.history.pushState({ path: newUrl }, '', newUrl);
     };
 
-    const getSelectedGenre = () => {
-        const genreRadioButtons = document.getElementsByName('genre');
-        const selectedGenre = Array.from(genreRadioButtons).find(radio => radio.checked);
-        return selectedGenre ? selectedGenre.value : null;
-    };
 
     const getSelectedSortOrder = () => {
         const sortOrderRadioButtons = document.getElementsByName('sortOrder');
@@ -43,7 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderProductBox = (product) => {
         
 
-            const { id, name, description, price, images } = product;
+        const { id, name, description, price, images, isOnSale, discountRate } = product;
+
+        const numericPrice = Number(price);
+
+        const salePrice = isOnSale ? (numericPrice - (numericPrice * discountRate / 100)).toFixed(2) : numericPrice.toFixed(2);
+        
+        // prepare l'affichage du prix en tenant compte des soldes
+        const priceDisplay = isOnSale 
+            ? `<span class="original-price">${numericPrice.toFixed(2)} €</span>
+                <span class="sale-price">${salePrice} € </span><span class="discountRate">(-${discountRate}%)</span>`
+            : `<span>${numericPrice.toFixed(2)} €</span>`;
 
             const boxElement = document.createElement("div");
             boxElement.classList.add("box");
@@ -58,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="titre-articles">${name} - ${description}</p>
             </a>
             <div class="ajout-button">
-                <p class="price-articles">${price} €</p>
+                <p class="price-articles">${priceDisplay}</p>
                 <button class="btn-add-to-cart" data-id="${id}"><i class="material-symbols-outlined icon-card">add</i></button>
             </div>
         </div>
@@ -87,7 +104,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 };
 
-                const filterAndDisplayProducts = (genre, sortOrder) => {
+                //reinitilaiser les filtres
+                function clearFilters() {
+                    selectedGenre = null;
+                    selectedSaleFilter = 'all';
+
+                    document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+                        input.checked = false;
+                    });
+
+                    document.querySelectorAll('.color-selection').forEach(color => {
+                        color.classList.remove('checked'); // ou la classe que vous utilisez pour indiquer une couleur sélectionnée
+                    });
+                    selectedColors = [];
+
+                    const productTypeCheckboxes = document.querySelectorAll('.checkbox-categ input[type="checkbox"]');
+                    productTypeCheckboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+
+                    filterAndDisplayProducts(null, 'asc', 'all');
+                }
+                document.getElementById('btn-effacer').addEventListener('click', clearFilters);
+
+                const filterAndDisplayProducts = (genre, sortOrder, saleFilter) => {
                     fetch(jsonFile)
                         .then(response => {
                             if (!response.ok) {
@@ -98,77 +138,65 @@ document.addEventListener('DOMContentLoaded', () => {
                         .then(data => {
         
                             let filteredData = data;
-                
-                            // Filtrer par genre si nécessaire
+
+                            //par genre
                             if (genre) {
                                 filteredData = filteredData.filter(product => product.genre === genre);
                             }
+
+                            // Filtre par soldes
+                            if (saleFilter === 'onSale') {
+                                filteredData = filteredData.filter(product => product.isOnSale);
+                            } else if (saleFilter === 'notOnSale') {
+                                filteredData = filteredData.filter(product => !product.isOnSale);
+                            }
                 
-                            // Filtrer par couleurs sélectionnées
+                            // filtrer par couleurs
                             if (selectedColors.length > 0) {
                                 filteredData = filteredData.filter(product => 
                                     selectedColors.some(color => product.color.includes(color)));
                             }
 
-                            // Filtrer par types de produits sélectionnés
+                            // filtrer par types de produits
                             const selectedTypes = getSelectedProductTypes();
                             if (selectedTypes.length > 0) {
                                 filteredData = filteredData.filter(product =>
                                     selectedTypes.includes(product.type_produit));
                             }
                 
-                            // Trier les données
+                            // prix (dé)croissant
                             const sortedData = sortOrder === 'asc' ?
                                 filteredData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)) :
                                 sortOrder === 'desc' ?
                                 filteredData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price)) :
                                 filteredData;
                 
-                            // Effacer les produits existants et afficher les produits filtrés
                             boxesContainer.innerHTML = '';
                             sortedData.forEach(product => {
                                 const boxElement = renderProductBox(product);
                                 boxesContainer.appendChild(boxElement);
                             });
-                
+
+
+                            boxesContainer.innerHTML = '';
+
+                            if (sortedData.length > 0) {
+                                sortedData.forEach(product => {
+                                    const boxElement = renderProductBox(product);
+                                    boxesContainer.appendChild(boxElement);
+                                });
+                            } else {
+                                boxesContainer.innerHTML = '<p class="no-results-message">Aucun produit trouvé :(</p>';
+                            }
+                                    
                             updateUrlWithGenre(genre, sortOrder);
                         })
                         .catch(error => console.error("Erreur lors de la récupération des données:", error));
                 };
                 
-    const initEventListeners = () => {
-        console.log("Bouton cliqué");
-         // Conservez uniquement l'écouteur d'événements pour le bouton 'Valider'
-         validateButton.addEventListener('click', () => {
-            filterAndDisplayProducts(getSelectedGenre(), getSelectedSortOrder());
-        });
-    };
-
-    
-
-             // Ajouter des écouteurs pour le texte "Homme" et "Femme"
-             document.getElementById('homme').addEventListener('click', () => {
-                filterAndDisplayProducts('homme', getSelectedSortOrder());
-            });
-        
-            document.getElementById('femme').addEventListener('click', () => {
-                filterAndDisplayProducts('femme', getSelectedSortOrder());
-            });
-        
-            // Ajouter un écouteur pour l'image
-            document.querySelector('.titre-jnf').addEventListener('click', () => {
-                filterAndDisplayProducts(null, getSelectedSortOrder());
-            });
-
-    initEventListeners();
-
-    // Appel initial pour charger tous les produits
-    filterAndDisplayProducts(null, 'asc');
+    filterAndDisplayProducts(null, 'asc', 'all');
 });
 
 
-function getSelectedGenre() {
-    // Retourner la sélection actuelle du genre
-    return selectedGenre;
-}
+
 

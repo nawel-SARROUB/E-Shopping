@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/filtres.js"async></script>
     <script src="js/modal-flt.js" async></script>
     <script src="js/modal-cart.js" async></script>
     <script src="js/index.js" async></script>
@@ -36,7 +35,6 @@
             <div class="icons-corner">
                 <i class="material-symbols-outlined">search</i>
                 <i class="material-symbols-outlined" id="modal-cart">shopping_bag</i>
-                <span id="nb-cart-items">0</span>
                 <i class="material-symbols-outlined">account_circle</i>
             </div>
             
@@ -70,7 +68,7 @@
             </span>
 
             <div class="tri">
-                <p class="part">Trier</p>
+                <p class="part">Trier par : </p>
                 <label class="croissant">
                     <input type="radio" name="sortOrder" id="triCroissant" value="asc"> Prix croissant
                 </label>
@@ -79,16 +77,15 @@
                 </label>
             </div>
              
-            <div class="categ">
-                <p class="part">Catégorie</p>
-                <div class="chk">
-                        <label for="feminin" class="chk-f">
-                            <input type="checkbox" name="feminin" id="feminin"> Femme
-                        </label>
-                        <label for="masculin" class="chk-h">
-                            <input type="checkbox" name="masculin" id="masculin"> Homme
-                        </label>
-                </div>
+            <div class="soldes">
+                <label>
+                    <input type="radio" name="saleFilter" value="onSale">
+                    Produits soldés
+                </label>
+                <label>
+                    <input type="radio" name="saleFilter" value="notOnSale">
+                    Produits non soldés
+                </label>
             </div>
 
             <div class="colors">
@@ -149,8 +146,11 @@
                         </label>
                     </div>
             </div>
-
-            <button class="btn-valider" value="valider">VALIDER</button>
+            <div class="btn-flt">
+                <button class="btn-valider" value="valider">VALIDER</button>
+                <button class="btn-valider" value="erase" id="btn-effacer">EFFACER</button>
+            </div>
+            
         </div>
     </div>
     
@@ -164,6 +164,7 @@
             <p class="cart-title">MON PANIER</p>
             <div class="list-shopping"></div>
         </div>
+        <div class="total-amount">Total: <span id="cartTotal"></span> €</div>
         <div class="list-btns">
             <button type="submit" class="check-shopping">VALIDER LE PANIER</button>
             <button type="reset" class="check-shopping" id="reset">REINITIALISER</button>

@@ -20,14 +20,14 @@ main {
 
 .box {
     margin: 20px;
-    width: 290px; // La largeur est maintenant fixée à la largeur de l'image
+    width: 290px;
     display: flex;
     flex-direction: column;
-    align-items: center; // Centre les éléments horizontalement
+    align-items: center;
 }
 
 .images-style {
-    width: 100%; // L'image remplit la largeur de .box
+    width: 100%;
     height: 370px;
     object-fit: cover;
 }
@@ -39,12 +39,11 @@ main {
 
 [class*="articles"] {
     font-size: smaller;
-    width: 100%; // Assurez-vous que les éléments prennent toute la largeur disponible
-}
+    width: 100%;}
 
 .panier-articles {
     align-self: flex-end;
-    width: 100%; // Utilisez la pleine largeur pour le conteneur
+    width: 100%;
 }
 
 .price-articles {
@@ -54,6 +53,21 @@ main {
     width: 100%;
     font-size: 15px;
 }
+
+.original-price {
+    text-decoration: line-through;
+    font-weight: 300;
+    color: grey;
+  }
+  
+  .sale-price {
+    text-decoration: underline 3px rgb(204, 0, 71);
+    font-weight: bold;
+  }
+
+  .discountRate{
+    color: rgb(204, 0, 71);
+  }
 
 .ajout-button {
     display: flex;
@@ -96,4 +110,10 @@ main {
     box-shadow: 5px 5px 0px 1px rgba(0,0,0,1);
 -webkit-box-shadow: 5px 5px 0px 1px rgba(0,0,0,1);
 -moz-box-shadow: 5px 5px 0px 1px rgba(0,0,0,1);
+}
+
+.no-results-message{
+    grid: none;
+    font-size: x-large;
+    font-weight: 700;
 }
