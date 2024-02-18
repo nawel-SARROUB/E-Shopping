@@ -21,6 +21,8 @@ nav a {
     margin: 0 15px;
 }
 
+.logo-jnf{display: none;}
+
 .title-et-genre{
     display: flex;
     align-items: center;
@@ -49,3 +51,54 @@ nav a {
 }
 
 .genre-section .homme:hover, .genre-section .femme:hover {color: $yellow;}
+
+@media only screen and (max-width: 431px){
+    
+    header {
+        padding: 11px;
+        display: flex;
+        place-content: center;
+    }
+
+    nav {
+        place-content: space-between;
+    }
+    
+    .titre-jnf {
+        display: none;
+    }
+    
+    .logo-jnf{
+        display: block;
+        height: 63px
+    }
+
+    .title-et-genre {
+        display: flex;
+        align-items: center;
+        place-content: space-between;
+        
+    }
+
+    .title-genre{
+         margin-right: inherit;
+    }
+
+    .genre-section {
+        display: flex;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: inherit;
+       
+    }
+
+    .icon-corner{
+        margin-left: 46px;
+        font-size: xx-small;
+    }
+
+    .material-symbols-outlined {
+        font-size: 10px;
+    }
+}

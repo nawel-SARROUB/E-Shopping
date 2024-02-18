@@ -76,7 +76,7 @@ function updateTotalAmount() {
             const itemPrice = parseFloat(item.finalPrice);
             return sum + (itemPrice * item.quantity);
         }, 0);
-        totalElement.textContent = total.toFixed(2) + ' €';
+        totalElement.textContent = total.toFixed(2) ;
     }
 }
 

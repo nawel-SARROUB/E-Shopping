@@ -20,4 +20,9 @@ a{text-decoration: none;
     color: inherit;}
 
 
-
+    @media only screen and (max-width: 431px){
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+      }
